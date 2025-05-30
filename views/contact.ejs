@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <main class="container my-5">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="lead">Have a story tip or want to get in touch?</p>
+        
+        <form class="mt-4">
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <select class="form-select" id="subject">
+              <option>Story Tip</option>
+              <option>General Inquiry</option>
+              <option>Advertising</option>
+              <option>Partnership</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Send Message</button>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <div class="contact-info p-4 bg-light rounded">
+          <h3 class="mb-4">Our Information</h3>
+          <p><i class="fas fa-map-marker-alt me-2"></i> Nairobi, Kenya</p>
+          <p><i class="fas fa-phone me-2"></i> +254 700 000000</p>
+          <p><i class="fas fa-envelope me-2"></i> info@sustainkenya.org</p>
+          
+          <h3 class="mt-5 mb-3">Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="btn btn-outline-success me-2"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="btn btn-outline-success me-2"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#" class="btn btn-outline-success me-2"><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

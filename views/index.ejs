@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+  <%- include('partials/header') %>
+
+  <main class="container my-5">
+    <!-- Featured Articles -->
+    <section class="mb-5">
+      <h2 class="section-title mb-4">Featured Stories</h2>
+      <div class="row">
+        <% featuredArticles.forEach(article => { %>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <img src="/images/Sustainability3.jpg" class="card-img-top" alt="<%= article.title %>">
+              <div class="card-body">
+                <span class="badge bg-success mb-2"><%= article.category %></span>
+                <h5 class="card-title"><%= article.title %></h5>
+                <p class="card-text"><%= article.excerpt %></p>
+                <a href="/article/<%= article.id %>" class="btn btn-outline-success">Read More</a>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+
+    <!-- Latest News -->
+    <section>
+      <h2 class="section-title mb-4">Latest News</h2>
+      <div class="row">
+        <% latestArticles.forEach(article => { %>
+          <div class="col-lg-6 mb-4">
+            <div class="card mb-3 h-100">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/images/<%= article.image %>" class="img-fluid rounded-start h-100" alt="<%= article.title %>">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <span class="badge bg-success mb-2"><%= article.category %></span>
+                    <h5 class="card-title"><%= article.title %></h5>
+                    <p class="card-text"><small class="text-muted">Published on <%= article.date %></small></p>
+                    <a href="/article/<%= article.id %>" class="btn btn-outline-success btn-sm">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,136 @@
+:root {
+  --primary-green: #2e7d32;
+  --secondary-green: #81c784;
+  --dark-green: #1b5e20;
+  --light-green: #e8f5e9;
+  --earth-brown: #8d6e63;
+  --light-brown: #d7ccc8;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/Sustainability2.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+  margin-bottom: 40px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.section-title {
+  font-weight: 700;
+  color: var(--dark-green);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-green);
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.btn-success {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.btn-success:hover {
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
+}
+
+.btn-outline-success {
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.badge.bg-success {
+  background-color: var(--primary-green) !important;
+}
+
+.article-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.article-body {
+  font-size: 1.1rem;
+}
+
+.article-body p {
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  background-color: #263238;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  color: var(--dark-green);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin: 0 auto;
+  }
+  
+  .article-title {
+    font-size: 2rem;
+  }
+}
