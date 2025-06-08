@@ -3,7 +3,7 @@
 <head>
   <%- include('partials/head') %>
 </head>
-<body>
+<body class="editorial-style">
   <%- include('partials/navbar') %>
 
   <main class="container my-5">
@@ -17,12 +17,12 @@
     <div class="row">
       <% articles.forEach(article => { %>
         <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 editorial-card">
             <img src="/images/greenpower.jpg" class="card-img-top" alt="<%= article.title %>">
             <div class="card-body">
               <span class="badge bg-success mb-2"><%= article.category %></span>
               <h5 class="card-title"><%= article.title %></h5>
-              <p class="card-text"><small class="text-muted">Published on <%= article.date %></small></p>
+              <p class="article-meta">By <%= article.author || 'Staff Writer' %> | <small class="text-muted">Published on <%= article.date %></small></p>
               <p class="card-text"><%= article.excerpt %></p>
               <a href="/article/<%= article.id %>" class="btn btn-outline-success">Read More</a>
             </div>

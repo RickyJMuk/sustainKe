@@ -3,7 +3,7 @@
 <head>
   <%- include('partials/head') %>
 </head>
-<body>
+<body class="editorial-style">
   <%- include('partials/navbar') %>
 
   <main class="container my-5">
@@ -12,7 +12,7 @@
         <div class="col-12">
           <span class="badge bg-success mb-2"><%= article.category %></span>
           <h1 class="article-title"><%= article.title %></h1>
-          <p class="text-muted">Published on <%= article.date %></p>
+          <p class="article-meta">By <%= article.author || 'Staff Writer' %> | <small class="text-muted">Published on <%= article.date %></small></p>
         </div>
       </div>
 
@@ -27,6 +27,16 @@
           <div class="article-body">
             <p><%= article.content %></p>
             <!-- In a real app, this would be proper article content with paragraphs, headings, etc. -->
+          </div>
+          <div class="article-tags mt-4">
+            <strong>Tags:</strong>
+            <% if (article.tags && article.tags.length) { %>
+              <% article.tags.forEach(function(tag, index) { %>
+                <a href="/tags/<%= tag %>" class="badge bg-secondary text-white me-1"><%= tag %></a>
+              <% }); %>
+            <% } else { %>
+              <span>No tags</span>
+            <% } %>
           </div>
         </div>
       </div>
