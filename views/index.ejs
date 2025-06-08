@@ -4,7 +4,7 @@
   <%- include('partials/head') %>
   <style>
     .hero-article {
-      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/<%= featuredArticles[0].image %>');
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/windpower.jpg');
       background-size: cover;
       min-height: 60vh;
     }
@@ -34,10 +34,17 @@
       <p>Your trusted source for in-depth news and analysis on sustainability, climate change, renewable energy, and biodiversity in Kenya and beyond. Stay informed with our expert coverage and insightful editorials.</p>
     </section>
     <div class="row g-4 mb-5">
-      <% featuredArticles.slice(1, 3).forEach(article => { %>
+      <% 
+        const dummyFeaturedArticles = [
+          { id: 2, title: "Climate Change Impact on Kenyan Agriculture", category: "Climate Change", excerpt: "Exploring how shifting weather patterns affect crop yields and food security.", image: "climate1.jpg" },
+          { id: 3, title: "Renewable Energy Projects in Kenya", category: "Renewable Energy", excerpt: "A look at the latest solar and wind energy initiatives transforming the energy landscape.", image: "renewable1.jpg" },
+          { id: 4, title: "Biodiversity Conservation Efforts", category: "Biodiversity & Wildlife", excerpt: "Highlighting community-led projects protecting endangered species.", image: "biodiversity1.jpg" }
+        ];
+        dummyFeaturedArticles.forEach(article => { 
+      %>
         <div class="col-md-6">
           <div class="card border-0">
-            <img src="/images/mara.png" class="card-img-top" alt="<%= article.title %>">
+            <img src="/images/<%= article.image %>" class="card-img-top" alt="<%= article.title %>">
             <div class="card-body px-0">
               <span class="badge bg-success mb-2"><%= article.category %></span>
               <h3 class="card-title"><%= article.title %></h3>
@@ -55,10 +62,18 @@
         <h2 class="section-divider mb-4">Latest Updates</h2>
       </div>
       
-      <% latestArticles.forEach(article => { %>
+      <% 
+        const dummyLatestArticles = [
+          { id: 5, title: "Kenya's Wind Power Expansion", category: "Renewable Energy", date: "2025-04-01", image: "windpower.jpg" },
+          { id: 6, title: "Protecting the Mara Ecosystem", category: "Biodiversity & Wildlife", date: "2025-03-28", image: "mara.png" },
+          { id: 7, title: "Climate Adaptation Strategies", category: "Climate Change", date: "2025-03-25", image: "climate2.jpg" },
+          { id: 8, title: "Solar Energy Adoption in Rural Areas", category: "Renewable Energy", date: "2025-03-20", image: "solar.jpg" }
+        ];
+        dummyLatestArticles.forEach(article => { 
+      %>
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card h-100 border-0">
-            <img src="/images/Sustainability3.jpg" class="card-img-top" alt="<%= article.title %>">
+            <img src="/images/<%= article.image %>" class="card-img-top" alt="<%= article.title %>">
             <div class="card-body px-0">
               <small class="text-uppercase text-success"><%= article.category %></small>
               <h5 class="card-title mt-1"><%= article.title %></h5>
